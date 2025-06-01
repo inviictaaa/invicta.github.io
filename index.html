@@ -11,7 +11,6 @@
 />
 
 <style>
-
   * {
     margin: 0;
     padding: 0;
@@ -23,6 +22,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
   }
+
   body {
     background: url('assets/x-downloader.com_EZkziB-ezgif.com-video-to-gif-converter.gif') no-repeat center center/cover;
     position: relative;
@@ -82,6 +82,22 @@
     color: #00aced;
   }
 
+  .gallery-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00aced;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+
+  .gallery-button:hover {
+    background-color: #0084b4;
+  }
+
   audio {
     margin-top: 20px;
     width: 100%;
@@ -103,21 +119,26 @@
       <a href="http://github.com/inviictaaa" title="GitHub" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="http://invicta.ink/gallery" title="Slave Trade" aria-label="Slave">
-        <i class="fab fa-pinterest"></i>
+      <a href="https://www.youtube.com/shorts/rc-Qi7PuSr4" title="LinkedIn" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
       </a>
       <a href="https://discord.gg/nalgini" title="Discord" aria-label="Discord">
         <i class="fab fa-discord"></i>
       </a>
+      <a href="http://invica.ink" title="Slave Trade" aria-label="Slave">
+        <i class="fab fa-invictaink"></i>
+      </a>
     </div>
     <audio id="bg-music" src="https://github.com/inviictaaa/invicta.github.io/raw/refs/heads/main/assets/Lil%20Tecca%20-%20OWA%20OWA%20(Official%20Audio).mp3" preload="auto" loop></audio>
+    
+    <a href="/gallery" class="gallery-button">Go to Gallery</a>
   </div>
+
   <script>
     const audio = document.getElementById('bg-music');
     audio.volume = 0.1;
     window.addEventListener('load', () => {
-      audio.play().catch(() => {
-      });
+      audio.play().catch(() => {});
     });
     window.addEventListener('click', () => {
       if (audio.paused) {
