@@ -28,17 +28,28 @@
         Your browser does not support the video tag.
     </video>
 
+    <!-- ✅ Place script here, before closing </body> -->
     <script>
+        const video = document.getElementById('badAppleVideo');
+
+        // Set initial volume
+        video.volume = 0.3; // 30% volume
+
         // Request fullscreen on load
         window.addEventListener('load', () => {
-            const video = document.getElementById('badAppleVideo');
             if (video.requestFullscreen) {
                 video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) { // Safari
+            } else if (video.webkitRequestFullscreen) {
                 video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) { // IE11
+            } else if (video.msRequestFullscreen) {
                 video.msRequestFullscreen();
             }
+        });
+
+        // Unmute and resume playback with sound after user interaction
+        document.addEventListener('click', () => {
+            video.muted = false;
+            video.play();
         });
     </script>
 </body>
